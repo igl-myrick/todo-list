@@ -6,6 +6,7 @@ function List() {
 
 function Task(taskName) {
   this.task = taskName;
+  this.status = "to-do"
 }
 
 // program business logic
