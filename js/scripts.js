@@ -9,7 +9,19 @@ function Task(taskName) {
   this.status = "to-do"
 }
 
+List.prototype.newTask = function(taskToAdd) {
+  this.tasks = taskToAdd;
+}
+
 // program business logic
 
-let newTask = new Task("do dishes");
-console.log(newTask)
+
+let newList = new List();
+
+function handleList(paramTask) {
+  let userTask = new Task(paramTask);
+  newList.newTask(userTask);
+  console.log(newList);
+}
+
+handleList("do dishes");
