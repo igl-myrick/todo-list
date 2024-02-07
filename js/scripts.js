@@ -1,27 +1,39 @@
 // list & task object business logic
 
 function List() {
-  this.tasks = {};
+  this.taskList = {};
+}
+
+List.prototype.newTask = function(task) {
+  this.taskList[task.taskName] = task;
 }
 
 function Task(taskName) {
-  this.task = taskName;
+  this.taskName = taskName;
   this.status = "to-do"
-}
-
-List.prototype.newTask = function(taskToAdd) {
-  this.tasks = taskToAdd;
 }
 
 // program business logic
 
-
 let newList = new List();
 
-function handleList(paramTask) {
+function addTask(paramTask) {
   let userTask = new Task(paramTask);
   newList.newTask(userTask);
-  console.log(newList);
 }
 
-handleList("do dishes");
+function displayTasks(paramTask) {
+   return "task: " + newList.taskList[paramTask].taskName + ", status: " + newList.taskList[paramTask].status;
+}
+
+function displayList() {
+  let testArr = Object.keys(newList.taskList);
+  testArr.forEach(function(element) {
+    console.log(displayTasks(element));
+  })
+}
+
+addTask("do dishes");
+addTask("walk dog");
+
+displayList();

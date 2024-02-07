@@ -1,19 +1,19 @@
-Describe: handleList()
+Describe: displayList()
 
 Test: "It will return a task object."
-Code: handleList("do dishes");
+Code: displayList("do dishes");
 Expected Result: Object { task: "do dishes" }
 
 Test: "It will return a task object with a status."
-Code: handleList("do dishes");
+Code: displayList("do dishes");
 Expected Result: Object { task: "do dishes", status: "to-do" }
 
-Test: "It will return a List object with the user's tasks."
-Code: handleList("do dishes");
+Test: "It will return a list object with the user's tasks."
+Code: displayList("do dishes");
 Expected Result: Object { tasks: Object { task: 'do dishes' } }
 
 Test: "It will return the user's list of tasks in a readable form."
-Code: handleList("do dishes");
+Code: displayList("do dishes");
 Expected Result: "task: do dishes, status: to-do"
 
 Describe: List.prototype.updateTask()
