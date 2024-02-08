@@ -25,5 +25,7 @@ Expected Result: { task: "do dishes", status: "completed" }
 Describe: List.prototype.deleteTask()
 
 Test: "It will remove a designated task object from the list object."
-Code: List.deleteTask("do dishes");
-Expected Result: Object { list: {...} }
+Code: 
+Object { tasks: Object { task: 'do dishes' } }
+List.deleteTask("do dishes");
+Expected Result: Object { }

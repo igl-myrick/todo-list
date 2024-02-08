@@ -8,6 +8,10 @@ List.prototype.newTask = function(task) {
   this.taskList[task.taskName] = task;
 }
 
+List.prototype.deleteTask = function(taskName) {
+  delete this.taskList[taskName];
+}
+
 function Task(taskName) {
   this.taskName = taskName;
   this.taskStatus = "to-do"
@@ -35,15 +39,8 @@ function displayTasks(paramTask) {
 }
 
 function displayList() {
-  let testArr = Object.keys(newList.taskList);
-  testArr.forEach(function(element) {
+  let keysArr = Object.keys(newList.taskList);
+  keysArr.forEach(function(element) {
     console.log(displayTasks(element));
   })
 }
-
-addTask("do dishes");
-addTask("walk dog");
-
-newList.taskList["do dishes"].updateTask();
-
-displayList();
