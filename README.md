@@ -19,7 +19,7 @@ Expected Result: "task: do dishes, status: to-do"
 Describe: List.prototype.updateTask()
 
 Test: "It will update a task object with a replaced status."
-Code: List.updateTask("do dishes", 1);
+Code: Task.updateTask("do dishes");
 Expected Result: { task: "do dishes", status: "completed" }
 
 Describe: List.prototype.deleteTask()

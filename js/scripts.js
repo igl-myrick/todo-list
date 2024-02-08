@@ -10,7 +10,15 @@ List.prototype.newTask = function(task) {
 
 function Task(taskName) {
   this.taskName = taskName;
-  this.status = "to-do"
+  this.taskStatus = "to-do"
+}
+
+Task.prototype.updateTask = function() {
+  if (this.taskStatus === "to-do") {
+    this.taskStatus = "completed";
+  } else if (this.taskStatus === "completed") {
+    this.taskStatus = "to-do";
+  }
 }
 
 // program business logic
@@ -23,7 +31,7 @@ function addTask(paramTask) {
 }
 
 function displayTasks(paramTask) {
-   return "task: " + newList.taskList[paramTask].taskName + ", status: " + newList.taskList[paramTask].status;
+   return "task: " + newList.taskList[paramTask].taskName + ", status: " + newList.taskList[paramTask].taskStatus;
 }
 
 function displayList() {
@@ -35,5 +43,7 @@ function displayList() {
 
 addTask("do dishes");
 addTask("walk dog");
+
+newList.taskList["do dishes"].updateTask();
 
 displayList();
